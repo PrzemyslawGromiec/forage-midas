@@ -39,7 +39,6 @@ public class TransactionService {
 
         Incentive inc = http.postForObject(incentiveUrl, txn, Incentive.class);
         double incentive = inc.getAmount();
-        System.out.println(incentive);
 
         sender.setBalance(sender.getBalance() - txn.getAmount());
         recipient.setBalance(recipient.getBalance() + txn.getAmount() + incentive);
